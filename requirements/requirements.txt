@@ -1,0 +1,5 @@
+Django
+black
+pre-commit
+psycopg2
+asyncssh

@@ -1,0 +1,60 @@
+- model: io_ssh.DeviceType
+  fields:
+    model: Raspberry Pi
+    version: 1 A+
+    model_link: https://www.raspberrypi.org/products/raspberry-pi-1-model-a-plus/
+    gpio: true
+- model: io_ssh.DeviceType
+  fields:
+    model: Raspberry Pi
+    version: 1 B+
+    model_link: https://www.raspberrypi.org/products/raspberry-pi-1-model-b-plus/
+    gpio: true
+- model: io_ssh.DeviceType
+  fields:
+    model: Raspberry Pi
+    version: 2 B
+    model_link: https://www.raspberrypi.org/products/raspberry-pi-2-model-b/
+    gpio: true
+- model: io_ssh.DeviceType
+  fields:
+    model: Raspberry Pi
+    version: 3 B
+    model_link: https://www.raspberrypi.org/products/raspberry-pi-3-model-b/
+    gpio: true
+- model: io_ssh.DeviceType
+  fields:
+    model: Raspberry Pi
+    version: 3 B+
+    model_link: https://www.raspberrypi.org/products/raspberry-pi-3-model-b-plus/
+    gpio: true
+- model: io_ssh.DeviceType
+  fields:
+    model: Raspberry Pi
+    version: 3 A+
+    model_link: https://www.raspberrypi.org/products/raspberry-pi-3-model-a-plus/
+    gpio: true
+- model: io_ssh.DeviceType
+  fields:
+    model: Raspberry Pi
+    version: 4 B
+    model_link: https://www.raspberrypi.org/products/raspberry-pi-4-model-b/
+    gpio: true
+- model: io_ssh.DeviceType
+  fields:
+    model: Raspberry Pi
+    version: Zero
+    model_link: https://www.raspberrypi.org/products/raspberry-pi-zero/
+    gpio: false
+- model: io_ssh.DeviceType
+  fields:
+    model: Raspberry Pi
+    version: Zero W
+    model_link: https://www.raspberrypi.org/products/raspberry-pi-zero-w/
+    gpio: false
+- model: io_ssh.DeviceType
+  fields:
+    model: Raspberry Pi
+    version: Pico
+    model_link: https://www.raspberrypi.org/products/raspberry-pi-pico/
+    gpio: false

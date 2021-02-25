@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DEVICES IO_SSH</title>
+</head>
+<body>
+<form action="/io_ssh/create_device/" method="post">
+    {% csrf_token %}
+    {{ form }}
+    <input type="submit" value="Create Device">
+</form>
+</body>
+</html>

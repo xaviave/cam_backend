@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>IO_SSH INDEX</title>
+</head>
+<body>
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'io_ssh/style.css' %}">
+{% if latest_device_list %}
+    <ul>
+        {% for device in latest_device_list %}
+            <li><a href="{% url 'io_ssh:detail' device.id %}">{{ device.name }}</a></li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>No Device are available.</p>
+{% endif %}
+<a href="{% url 'io_ssh:create_device' %}">Create a device</a>
+</body>
+</html>
