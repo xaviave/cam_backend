@@ -1,11 +1,7 @@
-from django.urls import reverse
 from django.views import generic
-from django.shortcuts import render
-from django.http import HttpResponseRedirect
 
 from io_ssh.models.Device import Device
-
-from io_ssh.forms.DeviceForm import DeviceForm
+from io_ssh.models.SSHCommand import SSHCommand
 
 
 class IndexView(generic.ListView):
@@ -21,13 +17,11 @@ class DetailView(generic.DetailView):
     model = Device
     template_name = "io_ssh/detail.html"
 
-
-def create_device(request):
-    if request.method == "POST":
-        form = DeviceForm(request.POST)
-        if form.is_valid():
-            Device.objects.update_or_create(name=form.cleaned_data["name"], type_id=1)
-            return HttpResponseRedirect(reverse("io_ssh:v"))
-    else:
-        form = DeviceForm()
-    return render(request, "io_ssh/create_device.html", {"form": form})
+    def get_context_data(self, **kwargs):
+        data = super().get_context_data(**kwargs)
+        device_id = self.kwargs.get('pk')
+        try:
+            data['ssh_command_list'] = SSHCommand.objects.filter(device_id=device_id)
+        except SSHCommand.DoesNotExist:
+            data['ssh_command_list'] = []
+        return data

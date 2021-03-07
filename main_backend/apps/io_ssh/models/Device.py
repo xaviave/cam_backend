@@ -6,7 +6,7 @@ from io_ssh.models.DeviceType import DeviceType
 class Device(models.Model):
     create_date = models.DateTimeField("date created", auto_now_add=True, blank=False)
     name = models.CharField(max_length=50)
-    type = models.ForeignKey(DeviceType, on_delete=models.CASCADE, verbose_name="model")
+    type = models.ForeignKey(DeviceType, on_delete=models.CASCADE, null=True)
 
     class Meta:
         ordering = ["name"]

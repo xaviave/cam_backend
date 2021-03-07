@@ -1,10 +1,20 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html>
 <head>
     <meta charset="UTF-8">
     <title>DETAIL IO_SSH</title>
 </head>
 <body>
 <h1>{{ device.name }} {{ device.type|device_type_printer }}</h1>
+{% if ssh_command_list %}
+    <ul>
+        {% for command in ssh_command_list %}
+            <li><a href="{% url 'io_ssh:detail' command.id %}">{{ command.command }}</a></li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>No SSH command are in '{{ device.name }}' available.</p>
+{% endif %}
+<a href="{% url 'io_ssh:create_ssh_command' device.id %}">Create a SSH command</a>
 </body>
 </html>

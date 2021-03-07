@@ -2,4 +2,6 @@ Django
 black
 pre-commit
 psycopg2
+django-taggit
+
 asyncssh

@@ -1,7 +1,7 @@
 from django.db import models
 
 
-class SshHandler(models.Model):
+class SSHHandler(models.Model):
     """
     need a rsa key handler: - generate
                             - export

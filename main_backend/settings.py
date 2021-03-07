@@ -16,17 +16,25 @@ DEBUG = os.environ["DEBUG"]
 ALLOWED_HOSTS = []
 
 
-INSTALLED_APPS = [
+DJANGO_APPS = [
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-    # MY APP
+]
+
+THIRD_PARTY_APPS = [
+    "taggit",
+]
+
+LOCAL_APPS = [
     "main_backend.apps.polls.apps.PollsConfig",
     "main_backend.apps.io_ssh.apps.IoSshConfig",
 ]
+
+INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
@@ -95,7 +103,9 @@ USE_L10N = True
 
 USE_TZ = True
 
-STATIC_URL = "/console/"
+STATIC_URL = "/static/"
+
+MEDIA_URL = "/media/"
 
 SECURE_CONSOLE = True
 CONSOLE_WHITELIST = ["127.0.0.1"]
