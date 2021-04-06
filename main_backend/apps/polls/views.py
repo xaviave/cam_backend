@@ -17,7 +17,7 @@ class IndexView(generic.ListView):
 
 class DetailView(generic.DetailView):
     model = Question
-    template_name = "polls/detail.html"
+    template_name = "polls/device_detail.html"
 
 
 class ResultsView(generic.DetailView):
@@ -32,7 +32,7 @@ def vote(request, question_id):
     except (KeyError, Choice.DoesNotExist):
         return render(
             request,
-            "polls/detail.html",
+            "polls/device_detail.html",
             {
                 "question": question,
                 "error_message": "You didn't select a choice.",

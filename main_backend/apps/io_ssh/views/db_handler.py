@@ -10,7 +10,7 @@ def vote(request, question_id):
     except (KeyError, Choice.DoesNotExist):
         return render(
             request,
-            "io_ssh/detail.html",
+            "io_ssh/device_detail.html",
             {
                 "question": question,
                 "error_message": "You didn't select a choice.",

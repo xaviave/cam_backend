@@ -11,7 +11,7 @@
 {% if latest_device_list %}
     <ul>
         {% for device in latest_device_list %}
-            <li><a href="{% url 'io_ssh:detail' device.id %}">{{ device.name }}</a></li>
+            <li><a href="{% url 'io_ssh:device_detail' device_pk=device.pk %}">{{ device.name }}</a></li>
         {% endfor %}
     </ul>
 {% else %}

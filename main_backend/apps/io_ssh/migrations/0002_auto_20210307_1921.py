@@ -7,23 +7,31 @@ import django.db.models.deletion
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('io_ssh', '0001_initial'),
+        ("io_ssh", "0001_initial"),
     ]
 
     operations = [
         migrations.RemoveField(
-            model_name='device',
-            name='ssh_commands',
+            model_name="device",
+            name="ssh_commands",
         ),
         migrations.AddField(
-            model_name='sshcommand',
-            name='device',
-            field=models.ForeignKey(default=0, on_delete=django.db.models.deletion.CASCADE, to='io_ssh.device'),
+            model_name="sshcommand",
+            name="device",
+            field=models.ForeignKey(
+                default=0,
+                on_delete=django.db.models.deletion.CASCADE,
+                to="io_ssh.device",
+            ),
             preserve_default=False,
         ),
         migrations.AlterField(
-            model_name='device',
-            name='type',
-            field=models.ForeignKey(null=True, on_delete=django.db.models.deletion.CASCADE, to='io_ssh.devicetype'),
+            model_name="device",
+            name="type",
+            field=models.ForeignKey(
+                null=True,
+                on_delete=django.db.models.deletion.CASCADE,
+                to="io_ssh.devicetype",
+            ),
         ),
     ]

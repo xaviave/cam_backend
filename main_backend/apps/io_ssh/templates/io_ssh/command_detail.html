@@ -1,0 +1,13 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>DETAIL COMMAND IO_SSH</title>
+</head>
+<body>
+<h1>command.command</h1>
+<button type="submit" onclick="href='{% url 'io_ssh:execute_command' device_pk=command.device command_pk=command.pk%}'" name='exec_btn'>
+    Execute Command
+</button>
+</body>
+</html>
